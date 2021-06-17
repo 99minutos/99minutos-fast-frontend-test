@@ -60,8 +60,9 @@ We'll be looking for **simple and well-designed** component in the submission.
 
 ### Bonus points
 - Layout with flexbox.
+- Responsive
 - Perfect pixel
-- UI Improvements
 - Clean code
+- UI/UX Improvements
 
 
