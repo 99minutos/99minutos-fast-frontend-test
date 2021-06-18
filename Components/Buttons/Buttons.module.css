@@ -1,0 +1,16 @@
+.container {
+  margin-top: 1em;
+}
+
+.button {
+  background-color: pink;
+  border: none;
+  border-radius: 10px;
+  width: 15em;
+  height: 3em;
+  margin-bottom: 1em;
+}
+
+.button:focus {
+  background-color: rosybrown;
+}

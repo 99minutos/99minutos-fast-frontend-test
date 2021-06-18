@@ -1,0 +1,18 @@
+.container {
+  margin-top: 1em;
+  width: 20em;
+  text-align: center;
+}
+
+.order {
+  border-bottom: 1px solid pink;
+}
+
+.counter {
+  font-size: small;
+}
+
+.type {
+  font-weight: lighter;
+  font-size: smaller;
+}
