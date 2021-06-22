@@ -1,15 +1,31 @@
 .containers {
-  display: grid;
-  grid-template-columns: 20% 1fr;
-  width: 100vw;
-  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
 
-  border: 1px solid red;
+.containersWrapper {
+  display: inherit;
+  border: 2px solid black;
+  width: 70%;
+  height: 70%;
 }
 
 .containerList,
 .container {
-  margin: auto;
+  padding: 16px 32px;
+  width: 100%;
+  height: 100%;
+}
+
+.containerList {
+}
+
+.container {
+  overflow-y: scroll;
+  border-left: 2px dotted black;
 }
 
 .containerItem {
@@ -18,4 +34,25 @@
 
 .containerListItem {
   display: flex;
+  align-items: center;
+}
+
+.selectedContainer {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-left: 4px;
+  background-color: green;
+}
+
+@media (max-width: 1024px) {
+  .containerList,
+  .container {
+    padding: 8px 16px;
+  }
+
+  .containersWrapper {
+    width: 90%;
+    height: 90%;
+  }
 }
