@@ -11,19 +11,20 @@ const ContainersList = ({
 
   const isSuccess = () => {
     if (!containerList) return "no hubo info";
-    return containerList.data.containers.map((container, index) => (
-      <div class={styles.containerListItem}>
-        <div>
-          <p>{index === containerSelected && "selected"}</p>
+    return containerList.data.containers.map((container, index) => {
+      const isSelectedTrue = index === containerSelected;
+      return (
+        <div class={styles.containerListItem}>
+          <ContainerItem
+            key={index}
+            index={index}
+            name={container.name}
+            setContainerSelected={setContainerSelected}
+          />
+          {isSelectedTrue && <div class={styles.selectedContainer} />}
         </div>
-        <ContainerItem
-          key={index}
-          index={index}
-          name={container.name}
-          setContainerSelected={setContainerSelected}
-        />
-      </div>
-    ));
+      );
+    });
   };
 
   return <div className={styles.containerList}>{isSuccess()}</div>;
