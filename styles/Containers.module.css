@@ -1,0 +1,21 @@
+.containers {
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  width: 100vw;
+  height: 100vh;
+
+  border: 1px solid red;
+}
+
+.containerList,
+.container {
+  margin: auto;
+}
+
+.containerItem {
+  cursor: pointer;
+}
+
+.containerListItem {
+  display: flex;
+}
