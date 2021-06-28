@@ -5,7 +5,7 @@ This is the frontend challenge for live tests
 ## Welcome!
 If you’re reading this, it means we’re interested in working with you in 99minutos.com and solving amazing and difficult problems in shipping for online shopping tech in Latam.
 
-This README provides the instructions to a small, self-contained test for a supervised Frontend position.
+This README provides the instructions for live technical interview for *Frontend* position.
 
 ## What we're looking for
 We're looking for a talented and driven frontend developer, comfortable with building responsive front end experiences.
@@ -17,9 +17,9 @@ This is a quick coding supervised challenge we designed to assess your qualifica
 
 ## Getting started
 To get started with this challenge: 
-1) Fork this repository.
+1) Clone this repository.
 2) Create a branch with the name: ``yourlevel-yourname``, example: ``JR-joaosilva``
-3) When you finish, make a pull request with name ``yourname``, example ``João Silva`` and add a tag with your level (JR/PL/SR).
+3) When you finish, make a pull request with name ``yourname``, example ``João Silva`` and add a tag with your level (JR/MD/SR).
 
 ## About the project
 This is a project created with **Next.js**
@@ -55,13 +55,11 @@ We'll be looking for **simple and well-designed** component in the submission.
 - Develop the functionality previously presented.
 - A component is required to displays the list of available containers.
 - When clicking on a container, in another component you have to show the list of packages within that container
-- It is important to indicate which container is selected
+- It's important to indicate which container is selected by a visual indicator
 - This live test to take around 1 hour, but not significantly more (your time is very valuable!)
 
 ### Bonus points
-- Layout with flexbox.
 - Responsive
-- Perfect pixel
 - Clean code
 - UI/UX Improvements
 
