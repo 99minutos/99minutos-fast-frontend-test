@@ -1,10 +1,14 @@
 import Head from "next/head";
+import Container from './Container';
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
-    <div className={styles.mainTitle}>
-      <h1>99minutos Fast Frontend Test</h1>
-    </div>
+    <>
+      <div className={styles.mainTitle}>
+        <h1>99minutos Fast Frontend Test</h1>
+      </div>
+      <Container/>
+    </>
   );
 }

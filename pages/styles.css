@@ -1,0 +1,22 @@
+.main {
+  background-color:#0ffff7;
+  max-width: 900px;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.order-list {
+  border: 1px solid black;
+}
+
+.active {
+
+}
+
+.nav-order {
+  max-width: 300px;
+  display: flex;
+  justify-content: space-around;
+}
+
