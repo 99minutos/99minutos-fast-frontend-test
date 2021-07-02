@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react';
+import Box from '../src/images/caja.png';
 
 function container() {
-  const [togglestate, settoggleState] = useState(1)
+  const [toggleState, setToggleState] = useState(1)
   const [data, setData] = useState(undefined)
 
   const toggletab = (index) => {
-    console.log(index)
+    setToggleState(index)
   }
 
   const apiGet = () => {
@@ -28,26 +29,31 @@ function container() {
         <div className='container'>
           <h3>Container</h3>
           {data.containers.map(item => 
-            <div key={item.name} onClick={() => toggletab(item.name)} 
-            className={togglestate === item.name ? 'order-list active' : 'order-list'}>
+          <div className='order-container'>
+            <button key={item.name} onClick={() => toggletab(item.name)} 
+            className={toggleState === item.name ? 'order-list active' : 'order-list'}>
               {item.name}
-            </div>
+            </button>
+          </div>
           )}
         </div>
 
         <div className='order'>
           <div className='nav-order'>
-            <h3>Orders</h3>
-            <p>Container</p>
+            <h3 className='order-title'>Orders</h3>
+            <p className='order-subtitle'>Container</p>
             <p className='order-name'>{data.containers[0].name}</p>
           </div>
-          <div className='order-list-child'>
-            <img className='order-image'/>
-            <div>
-              <h4 className='order-counter'>{data.containers[1].orders[0].counter}</h4>
-              <p className='order-types'>je</p>
+            {data.containers.map(item => 
+            <div className={toggleState === item.orders.counter ? 'order-list-child active' : 'order-list-child'}  className='order-list-child'>
+              {item.orders.counter}
+              <img src={Box} className='order-image'/>
+              <div  className='sub-order'>
+                <h4 className='order-counter'>{data.containers[0].orders[0].counter}</h4>
+                <p className='order-types'>{data.containers[0].orders[0].type}</p>
+              </div>
             </div>
-          </div>
+            )}
         </div>
       </section>
     </div> : <h1>cargando data</h1>}
