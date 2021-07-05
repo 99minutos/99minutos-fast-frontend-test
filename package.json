@@ -8,6 +8,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
     "cors": "^2.8.5",
     "next": "11.0.0",
     "react": "17.0.2",
