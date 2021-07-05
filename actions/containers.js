@@ -1,4 +1,4 @@
-import { ADD_CONTAINER } from "../constants";
+import { ADD_CONTAINER, END_CONTAINERS, START_CONTAINERS } from "../constants";
 import { ContainerService } from "../services";
 
 export const containersActions = {
@@ -7,16 +7,18 @@ export const containersActions = {
 };
 
 function getContainers() {
-  let containers = ContainerService.getContainer().then(
-    (containers) => {
-      return containers;
-    },
-    (error) => {
-      console.log("==error: ==========");
-      console.log(error);
-    }
-  );
-  return containers;
+  return (dispatch) => {
+    dispatch(request());
+
+    ContainerService.getContainer().then(
+      (containers) => {
+        dispatch(success(containers));
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  };
 }
 
 function addContainer(order) {
@@ -25,5 +27,19 @@ function addContainer(order) {
       type: ADD_CONTAINER,
       payload: order,
     });
+  };
+}
+
+function request() {
+  return {
+    type: START_CONTAINERS,
+    payload: null,
+  };
+}
+
+function success(containers) {
+  return {
+    type: END_CONTAINERS,
+    payload: containers,
   };
 }
