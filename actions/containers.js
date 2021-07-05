@@ -1,16 +1,29 @@
+import { ADD_CONTAINER } from "../constants";
 import { ContainerService } from "../services";
 
 export const containersActions = {
-    getContainers
-}
+  getContainers,
+  addContainer,
+};
 
 function getContainers() {
-  ContainerService.getContainer().then((containers) => {
-    console.log("containrs ok: ", containers);
-  },
-  (error)=> {
-      console.log('==error: ==========');
+  let containers = ContainerService.getContainer().then(
+    (containers) => {
+      return containers;
+    },
+    (error) => {
+      console.log("==error: ==========");
       console.log(error);
-      console.log('====================================');
-  });
+    }
+  );
+  return containers;
+}
+
+function addContainer(order) {
+  return (dispatch) => {
+    dispatch({
+      type: ADD_CONTAINER,
+      payload: order,
+    });
+  };
 }

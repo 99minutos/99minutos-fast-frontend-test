@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { containersActions } from "../../actions";
+import { ContainerService } from "../../services";
 
+import { useDispatch } from "react-redux";
+
+import Orders from "../../components/Orders";
 /**Material UI */
 import {
   Grid,
@@ -9,36 +12,54 @@ import {
   ListItem,
   ListItemText,
 } from "@material-ui/core";
+import { containersActions } from "../../actions/containers";
 
-const Container = (props) => {
+const Container = () => {
+  const dispatch = useDispatch();
   const [containers, setContainers] = useState([]);
 
-  // De forma similar a componentDidMount y componentDidUpdate
-  useEffect(() => {
-    // Actualiza el título del documento usando la API del navegador
-
-    setContainers({
-      containers: containersActions.getContainers(),
+  const getContainers = () => {
+    ContainerService.getContainer().then((containers) => {
+      setContainers(containers);
+      return containers;
     });
+  };
+
+  const setContainer = (container) => {
+    dispatch(containersActions.addContainer(container));
+  };
+
+  useEffect(() => {
+    getContainers();
   }, []);
 
   return (
     <>
       <Grid container>
         <Grid item xs={3}>
-          <h1>Containers</h1>
+          <h3>Containers</h3>
           <CardContent>
             <List component="nav" aria-label="main mailbox folders">
-              {containers.length ? containers.map((container, index) => (
-                <ListItem button>
-                  <ListItemText primary={container.name} />
-                </ListItem>
-              )): null}
+              {containers
+                ? containers.map((container, index) => (
+                    <ListItem
+                      key={index}
+                      button
+                      onClick={() => {
+                        setContainer(container);
+                      }}
+                    >
+                      <ListItemText primary={container.name} />
+                    </ListItem>
+                  ))
+                : null}
             </List>
           </CardContent>
         </Grid>
         <Grid item xs={9}>
-          <h3>Orders |</h3>
+        
+
+          <Orders />
         </Grid>
       </Grid>
     </>

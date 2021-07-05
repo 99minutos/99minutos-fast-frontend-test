@@ -1,0 +1,3 @@
+export const ADD_CONTAINER = "ADD_CONTAINER";
+
+export const START_CONTAINERS = "START_CONTAINERS";
