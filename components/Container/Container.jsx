@@ -13,6 +13,7 @@ import {
   List,
   ListItem,
   ListItemText,
+  Card,
 } from "@material-ui/core";
 import { containersActions } from "../../actions/containers";
 
@@ -32,28 +33,33 @@ const Container = () => {
     <>
       <Grid container>
         <Grid item xs={3}>
-          <h3>Containers</h3>
-          <CardContent>
-          <Loading loading={loading} />
-            <List component="nav" aria-label="main mailbox folders">
-              {containers
-                ? containers.map((container, index) => (
-                    <ListItem
-                      key={index}
-                      button
-                      onClick={() => {
-                        setContainer(container);
-                      }}
-                    >
-                      <ListItemText primary={container.name} />
-                    </ListItem>
-                  ))
-                : null}
-            </List>
-          </CardContent>
+          <Card variant="outlined">
+            <h3>Containers</h3>
+
+            <CardContent>
+              <Loading loading={loading} />
+              <List component="nav" aria-label="main mailbox folders">
+                {containers
+                  ? containers.map((container, index) => (
+                      <ListItem
+                        key={index}
+                        button
+                        onClick={() => {
+                          setContainer(container);
+                        }}
+                      >
+                        <ListItemText primary={container.name} />
+                      </ListItem>
+                    ))
+                  : null}
+              </List>
+            </CardContent>
+          </Card>
         </Grid>
         <Grid item xs={9}>
-          <Orders />
+          <Card variant="outlined">
+            <Orders />
+          </Card>
         </Grid>
       </Grid>
     </>
