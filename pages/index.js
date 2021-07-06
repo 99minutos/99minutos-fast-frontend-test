@@ -1,10 +1,11 @@
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import Head from 'next/head';
+import ContainersList from '../components/ContainersList';
+import styles from '../styles/Home.module.css';
 
 export default function Home() {
-  return (
-    <div className={styles.mainTitle}>
-      <h1>99minutos Fast Frontend Test</h1>
-    </div>
-  );
+    return (
+        <div className="mainPage">
+            <ContainersList />
+        </div>
+    );
 }
