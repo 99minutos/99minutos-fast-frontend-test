@@ -58,6 +58,7 @@ We'll be looking for **simple and well-designed** component in the submission.
 - When clicking on a container, in another component you have to show the list of packages within that container
 - It's important to indicate which container is selected by a visual indicator
 - This live test to take around 1 hour, but not significantly more (your time is very valuable!)
+- Add prints of your component in the repository and use them in the readme
 
 ### Bonus points
 - Responsive
