@@ -1,3 +1,162 @@
-.mainTitle {
-  color: #85c440;
+.body {
+  padding: 5% 20%;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  height: 500px;
+  border-radius: 20px;
+}
+
+.footer {
+  margin-top: 50px;
+  text-align: center;
+  font-weight: bold;
+  
+  
+}
+
+/*      left side     */
+
+.container {
+  grid-column: 1 / 2;
+  grid-row: 1;
+  background-color: #83c634;
+  color: white;
+  border-radius: 20px 0 0 20px;
+  padding: 5%;
+  text-align: center;
+  overflow-y: auto;
+ 
+}
+
+.containerItem {
+  background-color: white;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  color: #696969;
+  
+}
+.containerItem:hover{
+  background-color: #d4d4d4;
+  transition: 0.25s;
+  box-shadow: 0 2px 2px 0 #DBEDF3;
+}
+
+.selectedContainer {
+  font-weight: bold;
+  color: #83c634;
+}
+
+.arrow {
+  float: right;
+  
+}
+
+
+
+/*      right side       */
+
+.order {
+  grid-column: 2 / 2;
+  grid-row: 1;
+  background-color: white;
+  border-radius: 0 20px 20px 0;
+  padding: 5%;
+  text-align: center;
+  overflow-y: scroll;
+}
+
+.order::-webkit-scrollbar {
+
+  display: none;  /* Ocultar scroll */
+}
+
+.orderItem {
+  text-align: left;
+  margin: 10px 0;
+  padding: 10px 1px;
+  border-radius: 5px;
+  border-bottom: 1px solid gray;
+}
+
+.orderItem:hover{
+  transition: 0.25s;
+  box-shadow: 0 2px 2px 0 gray;
+  background-color:  #d4d4d4;
+
+}
+
+.box {
+ display: inline-block;
+ margin-left: 5px;
+}
+
+.orderItemText {
+  margin-left: 50px;
+  display: inline-block;
+ }
+
+.orderItemTitle{
+  display: block;
+  font-weight: bold;
+}
+
+/*      Responsive queries      */
+
+ @media (max-width: 990px) {
+  .body {
+      padding: 0; 
+  }
+  
+  .container {
+    grid-column: 1 / 1;
+    grid-row: 1;
+    border-radius: 0;
+  }
+  
+  .order {
+    grid-column: 1 / 1;
+    grid-row: 2;  
+    border-radius: 0;
+  }
+
+  .card {
+    height: auto;
+    grid-template-columns: repeat(1, 1fr);
+    border-radius: none;
+    box-shadow: none;
+  }
+ 
+}
+
+
+.loading {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.loading:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: loading 1.2s linear infinite;
+}
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
