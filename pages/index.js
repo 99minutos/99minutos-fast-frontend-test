@@ -1,23 +1,11 @@
-import Head from "next/head"
 import { useEffect, useState } from "react"
-import styled from "styled-components"
+import RightSection from "../src/molecules/RightSection"
+import LeftSection from "../src/molecules/LeftSection"
+import CenterContent from "../src/organism/Home/CenterContent"
 
-const Container = styled.div`
-  width: 80vw;
-  border: solid 1px black;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-gap: 1rem;
-`
-const RightSection = styled.div`
 
-`
-const LeftSection = styled.div`
 
-`
-const Title = styled.h2`
-`
-const Item = styled.div``
+
 export default function Home() {
   const [data, setData] = useState()
   const [selectedElement, setSelectedElement] = useState()
@@ -28,30 +16,16 @@ export default function Home() {
    setData(response.data.containers)
     
   }, [])
-  console.log(data)
   const selectElement = (element) => {
     const selectedData = data.filter((item) => item.name === element)
     setSelectedElement(selectedData[0])
   }
   
   return (
-    <Container>
-      <RightSection>
-        <Title>Containers</Title>
-        {data && data.map((item) => (
-          <Item onClick={() => selectElement(item.name)}><p>{item.name}</p></Item>
-        ))}
-      </RightSection>
-      <LeftSection>
-        <Title>Orders| Container {selectedElement && selectedElement.name}</Title>
-        {selectedElement && selectedElement.orders.map((element) => (
-        <>
-          <p>{element.counter}</p>
-          <p>{element.type}</p>
-        </>
-      ))}
-      </LeftSection>
-      
-    </Container>
+    <CenterContent>
+        <LeftSection items={data} selectElement={selectElement} selectedElement={selectedElement} />
+        
+        <RightSection selectedElement={selectedElement} />
+    </CenterContent>
   );
 }
