@@ -1,0 +1,39 @@
+.container {
+  border: 5px solid pink;
+  margin: 3em;
+  display: flex;
+  flex-direction: column;
+  height: 30em;
+  overflow-y: auto;
+}
+
+.title {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid pink;
+}
+
+.ordersTitle {
+  border-left: 1px solid pink;
+  padding-left: 1em;
+  display: flex;
+  align-items: center;
+}
+
+.containerTitle {
+  margin-left: 1em;
+}
+
+.infoContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.orders {
+  display: flex;
+}
